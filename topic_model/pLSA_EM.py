@@ -154,8 +154,8 @@ def predict(topic_words, words, words_id):
 
 
 if __name__ == "__main__":
-    t = 1
-    if t == 0:
+    flag = 1
+    if flag == 0:
         doc_list = [[1,2,2,3,3], [2,2,3,3,3,4], [5,6,6,6,7,7,7,7], [66,6,6,6,7,6,7,7,7,8,9]]
         wordsid_file = "word_id"
         doc_word, words = count_WordDoc(doc_list, wordsid_file)

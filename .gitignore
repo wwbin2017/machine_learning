@@ -104,5 +104,6 @@ venv.bak/
 .mypy_cache/
 
 # owner ignore file 
-./data
-./topic_model/data
+data
+topic_model/data/
+topic_model/wikiextractor/
