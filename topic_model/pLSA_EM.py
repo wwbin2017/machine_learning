@@ -142,7 +142,9 @@ def init_param(doc_word, words, k):
 def predict(topic_words, words, words_id):
     w_id = list()
     for w in words:
-        w_id.append(words_id[w] if w in words_id.keys() else 0)
+        if w in words_id.keys():
+            w_id.append(words_id[w])
+        # w_id.append(words_id[w] if w in words_id.keys() else 0)
     dim = topic_words.shape[0]
     docn_topic = np.zeros(dim)
     for i in w_id:
@@ -163,7 +165,7 @@ if __name__ == "__main__":
         # test
         wordsid_file = "word_id"
         doc_topic, topic_words = load_model()
-        words = [6,6,7,7,1,4]
+        words = ['6', '6', '7', '7', '1', '4']
         words_id = load_word_id(wordsid_file)
         print predict(topic_words, words, words_id)
     # print doc_word
