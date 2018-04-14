@@ -105,4 +105,5 @@ venv.bak/
 
 # owner ignore file 
 ./data
+./topic_model/data/
 ./topic_model/data
