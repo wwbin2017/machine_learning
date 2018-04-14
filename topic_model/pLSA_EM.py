@@ -108,7 +108,7 @@ def init_param(doc_word, words, k):
 if __name__ == "__main__":
     doc_list = [[1,2,2,3,3], [2,2,3,3,3,4], [5,6,6,6,7,7,7,7], [66,6,6,6,7,6,7,7,7,8,9]]
     doc_word, words = count_WordDoc(doc_list)
-    doc_topic, topic_words = plsa_em(doc_word, words, 2, 100)
+    doc_topic, topic_words = plsa_em(doc_word, words, 2, 1000)
     print doc_word
     print words
     print doc_topic
