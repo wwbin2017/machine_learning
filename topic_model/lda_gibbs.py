@@ -184,7 +184,7 @@ def predict(topic_words, words, words_id):
 
 
 if __name__ == "__main__":
-    flag = 0
+    flag = 1
     if flag == 0:
         doc_list = [[1,2,2,3,3], [2,2,3,3,3,4], [5,6,6,6,7,7,7,7], [66,6,6,6,7,6,7,7,7,8,9]]
         wordsid_file = "./lda_model_data/word_id"
@@ -199,8 +199,6 @@ if __name__ == "__main__":
         # test
         wordsid_file = "./lda_model_data/word_id"
         doc_topic, topic_words = load_model()
-        print doc_topic
-        print topic_words
         words = ['6', '6', '7', '7', '1', '4']
         words_id = load_word_id(wordsid_file)
         print predict(topic_words, words, words_id)
