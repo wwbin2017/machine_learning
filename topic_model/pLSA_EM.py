@@ -42,11 +42,11 @@ def save_model(doc_topic, topic_words):
     :param topic_words: 
     :return: 
     """
-    np.save("doc2topic.npy", doc_topic)
-    np.save("topic2words.npy", topic_words)
+    np.save("./plsa_model_data/doc2topic.npy", doc_topic)
+    np.save("./plsa_model_data/topic2words.npy", topic_words)
 
 
-def load_model(doc_topic_file="doc2topic.npy", topic_words_file="topic2words.npy"):
+def load_model(doc_topic_file="./plsa_model_data/doc2topic.npy", topic_words_file="./plsa_model_data/topic2words.npy"):
     """
     
     :param doc_topic_file: 
@@ -157,13 +157,13 @@ if __name__ == "__main__":
     flag = 1
     if flag == 0:
         doc_list = [[1,2,2,3,3], [2,2,3,3,3,4], [5,6,6,6,7,7,7,7], [66,6,6,6,7,6,7,7,7,8,9]]
-        wordsid_file = "word_id"
+        wordsid_file = "./plsa_model_data/word_id"
         doc_word, words = count_WordDoc(doc_list, wordsid_file)
         doc_topic, topic_words = plsa_em(doc_word, words, 2, 20)
 
     else:
         # test
-        wordsid_file = "word_id"
+        wordsid_file = "./plsa_model_data/word_id"
         doc_topic, topic_words = load_model()
         words = ['6', '6', '7', '7', '1', '4']
         words_id = load_word_id(wordsid_file)

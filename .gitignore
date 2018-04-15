@@ -107,3 +107,8 @@ venv.bak/
 data
 topic_model/data/
 topic_model/wikiextractor/
+topic_model/lda_model_data/*
+topic_model/plsa_model_data/*
+
+
+
