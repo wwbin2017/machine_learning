@@ -109,6 +109,9 @@ topic_model/data/
 topic_model/wikiextractor/
 topic_model/lda_model_data/*
 topic_model/plsa_model_data/*
-
+svm/test/*
+svm/test.cc
+svm/*.o
+svm/svm
 
 
