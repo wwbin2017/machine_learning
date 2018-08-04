@@ -10,14 +10,14 @@ SVM::SVM(const string& file_name,float C, const string&  kernel, float precision
 }
 SVM::~SVM()
 {
-  delete [] alpha;
-  delete [] E;
-  delete [] label;
+  delete [] this->alpha;
+  delete [] this->E;
+  delete [] this->label;
   for(int i=0;i<this->sample_n;i++)
   {
-    delete[] sample[i];
+    delete[] this->sample[i];
   }
-  delete[] sample;
+  delete[] this->sample;
 }
 void SVM::init(const string& file_name,float C, const string& kernel, float precision)
 { 
