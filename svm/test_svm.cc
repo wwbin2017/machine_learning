@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     float C = 5.0;
-    string kernel = "None";
+    string kernel = "none"; // none polynomial Gaussian
     float precision = 0.000001;
     string file_name = "./data/test.txt";
     SVM svm_model(file_name, C, kernel, precision);

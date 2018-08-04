@@ -112,6 +112,22 @@ float SVM::compute_kernel(int index_1, int index_2)
       sum+=this->sample[index_1][i]*this->sample[index_2][i];
     }
   }
+  if(this->kernel=="polynomial" || this->kernel=="Polynomial")
+  {
+    for(int i=0;i<this->field_n;i++)
+    {
+      sum+=this->sample[index_1][i]*this->sample[index_2][i];
+    }
+    return pow(sum+1,2);
+  }
+  if(this->kernel=="Gaussian" || this->kernel=="gaussian")
+  {
+    for(int i=0;i<this->field_n;i++)
+    {
+      sum+=pow(this->sample[index_1][i]-this->sample[index_2][i], 2);
+    }
+    return exp(-sum/2.0);
+  }
   return sum;
 }
 float SVM::compute_kernel_feature(float* index_1, float* index_2)
