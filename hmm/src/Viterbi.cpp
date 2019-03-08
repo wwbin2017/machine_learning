@@ -1,5 +1,5 @@
-#include<string>
-#include<vector>
+#include <string>
+#include <vector>
 #include <fstream> 
 #include <fiostream.h>
 #include <iostream.h>
@@ -51,7 +51,8 @@ class Viterbi{
 		}
 
 	    vector<int> predict(vector<int> o) {
-			
+			int T = o.size();
+						
 		}
 
 	private:
