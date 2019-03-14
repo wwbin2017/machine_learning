@@ -5,10 +5,24 @@
 using namespace std;
 class BaumWelch {
 	public:
-		BaumWelch() {
+		BaumWelch(int N, int M):_N{N}, _M(M) {
 		
 		}
 		void init() {
+			_A.resize(_N);
+			_B.resize(_N);
+			_Pi.resize(_N);
+			for( int i = 0; i< _N; i+=1) {
+				_A[i].resize(_N);
+				_B[i].resize(_M);
+				_Pi[i] = 1.0/_N;
+				for(j = 0; j < _N; j+=1) {
+					_A[i][j] = 1.0/_N;
+				}
+				for(j = 0; j < _M; j+=1) {
+					_B[i][j] = 1.0/_M;
+				}
+			}
 			// 初始化参数
 		}
 	    void forward(vector< vector<int> > &A, vector< vector<float> > &B, 
