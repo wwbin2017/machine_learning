@@ -25,8 +25,8 @@ class BaumWelch {
 			}
 			// 初始化参数
 		}
-	    void forward(vector< vector<int> > &A, vector< vector<float> > &B, 
-				vector<float> &Pi, vector<int> &observe, float &p, vector< vector<float> > &alpha) {
+	    void forward(const vector< vector<int> > &A, const vector< vector<float> > &B, 
+				const vector<float> &Pi, const vector<int> &observe, float &p, vector< vector<float> > &alpha) {
 			int N = B.size();
 			int M = B[0].size();
 			int T = observe.size();
@@ -52,8 +52,8 @@ class BaumWelch {
 			}
 		}
 
-	    void backward(vector< vector<int> > &A, vector< vector<float> > &B, 
-				vector<float> &Pi, vector<int> &observe, float &p, vector< vector<float> > &belta) {
+	    void backward(const vector< vector<int> > &A, const vector< vector<float> > &B, 
+				const vector<float> &Pi, const vector<int> &observe, float &p, vector< vector<float> > &belta) {
 			int N = B.size();
 			int M = B[0].size();
 			int T = observe.size();
