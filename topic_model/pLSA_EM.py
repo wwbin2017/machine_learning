@@ -37,10 +37,9 @@ def load_word_id(wordsid_file):
 
 def save_model(doc_topic, topic_words):
     """
-    
-    :param doc_topic: 
-    :param topic_words: 
-    :return: 
+    :param doc_topic:
+    :param topic_words:
+    :return:
     """
     np.save("./plsa_model_data/doc2topic.npy", doc_topic)
     np.save("./plsa_model_data/topic2words.npy", topic_words)
@@ -48,10 +47,9 @@ def save_model(doc_topic, topic_words):
 
 def load_model(doc_topic_file="./plsa_model_data/doc2topic.npy", topic_words_file="./plsa_model_data/topic2words.npy"):
     """
-    
-    :param doc_topic_file: 
-    :param topic_words_file: 
-    :return: 
+    :param doc_topic_file:
+    :param topic_words_file:
+    :return:
     """
     doc_topic = np.load(doc_topic_file)
     topic_words = np.load(topic_words_file)
@@ -77,10 +75,10 @@ def plsa_em(doc_word, words, k, iter_num):
 def e_step(doc_topic, topic_words, doc_k_words):
     """
     EM算法
-    :param doc_topic: 
-    :param topic_words: 
-    :param doc_k_words: 
-    :return: 
+    :param doc_topic:
+    :param topic_words:
+    :param doc_k_words:
+    :return:
     """
     dim = doc_k_words.shape
     for i in range(dim[0]):
@@ -93,11 +91,11 @@ def e_step(doc_topic, topic_words, doc_k_words):
 def m_step(doc_word, doc_topic, topic_words, doc_k_words):
     """
     EM算法
-    :param doc_word: 
-    :param doc_topic: 
-    :param topic_words: 
-    :param doc_k_words: 
-    :return: 
+    :param doc_word:
+    :param doc_topic:
+    :param topic_words:
+    :param doc_k_words:
+    :return:
     """
     dim = doc_k_words.shape
     for i in range(dim[0]):
@@ -113,10 +111,10 @@ def m_step(doc_word, doc_topic, topic_words, doc_k_words):
 def init_param(doc_word, words, k):
     """
     初始化
-    :param doc_len: 
-    :param word_len: 
-    :param k: 
-    :return: 
+    :param doc_len:
+    :param word_len:
+    :param k:
+    :return:
     """
     doc_len = len(doc_word)
     word_len = len(words)
